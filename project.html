@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Projeto — Vinícius Amaral</title>
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>VA</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">Vinícius Amaral</a>
+      <div class="nav-group">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="selectworks.html" class="nav-link active">Projetos</a></li>
+            <li><a href="info.html" class="nav-link">Sobre Mim</a></li>
+            <li><a href="#contact" data-contact-trigger class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle"><span id="theme-icon"></span></button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+      <li><a href="selectworks.html" class="mobile-nav-link">Projetos</a></li>
+      <li><a href="info.html" class="mobile-nav-link">Sobre Mim</a></li>
+      <li><a href="#contact" data-contact-trigger class="mobile-nav-link">Contato</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <article class="project-detail-section">
+      <a href="selectworks.html" class="project-back-link">
+        &larr; Voltar para Projetos
+      </a>
+
+      <div class="project-hero-header">
+        <span id="proj-cat" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); display: block; margin-bottom: 0.75rem;">
+          Categoria
+        </span>
+        <h1 id="proj-title" class="project-main-title">Título do Projeto</h1>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="project-statement-col">
+          <p id="proj-statement" class="project-statement-text">
+            Descrição do projeto carregada dinamicamente pelo JavaScript.
+          </p>
+        </div>
+        <div id="proj-credits" class="project-credits-col">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <div id="proj-gallery" class="project-gallery-masonry">
+        <!-- Gallery items populated dynamically -->
+      </div>
+
+      <nav class="project-nav-footer" aria-label="Navegação entre projetos">
+        <a href="#" id="proj-prev" class="project-nav-link prev">
+          <span class="project-nav-direction">&larr; Projeto Anterior</span>
+          <span class="project-nav-name">Anterior</span>
+        </a>
+
+        <a href="#" id="proj-next" class="project-nav-link next">
+          <span class="project-nav-direction">Próximo Projeto &rarr;</span>
+          <span class="project-nav-name">Próximo</span>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-top-row">
+        <ul class="footer-social-links">
+          <li><a href="https://github.com/seugithub" target="_blank" class="footer-social-link">GitHub</a></li>
+          <li><a href="mailto:seuemail@exemplo.com" class="footer-social-link">Email</a></li>
+          <li><a href="https://linkedin.com/in/seulinkedin" target="_blank" class="footer-social-link">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-headline">
+        <a href="mailto:seuemail@exemplo.com" class="footer-email-big" data-contact-trigger>Contato</a>
+      </div>
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 Vinícius Amaral. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="contact-modal" class="contact-modal-overlay" role="dialog" aria-modal="true">
+    <div class="contact-modal-box">
+      <button class="modal-close-btn">&times;</button>
+      <h3 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; margin-bottom: 0.5rem;">Vamos conversar!</h3>
+      <form>
+        <div class="form-group"><label class="form-label">Seu Nome</label><input type="text" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Seu E-mail</label><input type="email" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Assunto</label><input type="text" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Mensagem</label><textarea class="form-textarea" rows="4" required></textarea></div>
+        <button type="submit" class="form-submit-btn">Enviar Mensagem</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos — Vinícius Amaral</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>VA</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">Vinícius Amaral</a>
+      <div class="nav-group">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="selectworks.html" class="nav-link active">Projetos</a></li>
+            <li><a href="info.html" class="nav-link">Sobre Mim</a></li>
+            <li><a href="#contact" data-contact-trigger class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle"><span id="theme-icon"></span></button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+      <li><a href="selectworks.html" class="mobile-nav-link">Projetos</a></li>
+      <li><a href="info.html" class="mobile-nav-link">Sobre Mim</a></li>
+      <li><a href="#contact" data-contact-trigger class="mobile-nav-link">Contato</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="select-works-section" style="padding-top: 3rem;">
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <div>
+          <h1 class="section-title">Projetos</h1>
+          <p style="font-size: 1.1rem; color: var(--text-muted); font-weight: 300; margin-top: 0.75rem;">
+            Uma coleção dos meus trabalhos acadêmicos e estudos independentes em Engenharia da Computação.
+          </p>
+        </div>
+      </div>
+
+      <div class="works-grid" style="row-gap: 4.5rem;">
+        <article class="work-card featured-large portrait" data-project-trigger="modelagem-3d">
+          <div class="work-img-wrapper">
+            <div class="img-placeholder" style="aspect-ratio: 4/5;">Imagem (Cenário Unity)</div>
+            <div class="work-overlay"><span class="work-view-btn">Ver Projeto</span></div>
+          </div>
+          <div class="work-info">
+            <div>
+              <h2 class="work-title">Modelagem 3D &amp; Unity</h2>
+              <span class="work-category">Desenvolvimento 3D</span>
+            </div>
+            <a href="project.html?id=modelagem-3d" class="spotlight-link" style="font-size: 0.75rem;">Ver Projeto &rarr;</a>
+          </div>
+        </article>
+
+        <article class="work-card featured-medium-right portrait" data-project-trigger="dev-software">
+          <div class="work-img-wrapper">
+            <div class="img-placeholder" style="aspect-ratio: 3/4;">Imagem (Software)</div>
+            <div class="work-overlay"><span class="work-view-btn">Ver Projeto</span></div>
+          </div>
+          <div class="work-info">
+            <div>
+              <h2 class="work-title">Projetos de Software</h2>
+              <span class="work-category">Programação</span>
+            </div>
+            <a href="project.html?id=dev-software" class="spotlight-link" style="font-size: 0.75rem;">Ver Projeto &rarr;</a>
+          </div>
+        </article>
+
+        <article class="work-card featured-medium-left square" data-project-trigger="sistemas-embarcados">
+          <div class="work-img-wrapper">
+            <div class="img-placeholder" style="aspect-ratio: 1/1;">Imagem (Placa/Circuito)</div>
+            <div class="work-overlay"><span class="work-view-btn">Ver Projeto</span></div>
+          </div>
+          <div class="work-info">
+            <div>
+              <h2 class="work-title">Sistemas Embarcados</h2>
+              <span class="work-category">Hardware</span>
+            </div>
+            <a href="project.html?id=sistemas-embarcados" class="spotlight-link" style="font-size: 0.75rem;">Ver Projeto &rarr;</a>
+          </div>
+        </article>
+
+        <article class="work-card featured-wide-right" data-project-trigger="logica-programacao">
+          <div class="work-img-wrapper">
+            <div class="img-placeholder" style="aspect-ratio: 16/9;">Imagem (Código/Tela)</div>
+            <div class="work-overlay"><span class="work-view-btn">Ver Projeto</span></div>
+          </div>
+          <div class="work-info">
+            <div>
+              <h2 class="work-title">Lógica de Programação</h2>
+              <span class="work-category">Algoritmos</span>
+            </div>
+            <a href="project.html?id=logica-programacao" class="spotlight-link" style="font-size: 0.75rem;">Ver Projeto &rarr;</a>
+          </div>
+        </article>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-top-row">
+        <ul class="footer-social-links">
+          <li><a href="https://github.com/seugithub" target="_blank" class="footer-social-link">GitHub</a></li>
+          <li><a href="mailto:seuemail@exemplo.com" class="footer-social-link">Email</a></li>
+          <li><a href="https://linkedin.com/in/seulinkedin" target="_blank" class="footer-social-link">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-headline">
+        <a href="mailto:seuemail@exemplo.com" class="footer-email-big" data-contact-trigger>Contato</a>
+      </div>
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 Vinícius Amaral. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modais -->
+  <div id="case-study-modal" class="case-modal-overlay" role="dialog" aria-modal="true">
+    <div class="case-modal-box">
+      <button class="modal-close-btn">&times;</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+        <span class="case-modal-cat" style="font-size: 0.775rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); display: block; margin-bottom: 0.5rem;"></span>
+        <h2 class="case-modal-title" style="font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; line-height: 1;"></h2>
+      </div>
+      <p class="case-modal-lead" style="font-size: 1.25rem; font-weight: 300; line-height: 1.5; margin-bottom: 2rem;"></p>
+      <div class="case-modal-credits" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); margin-bottom: 2.5rem;"></div>
+      <div class="case-modal-gallery"></div>
+      <div style="margin-top: 2.5rem; text-align: right; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+        <a href="#" class="case-modal-fullpage" style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--text-main); padding-bottom: 2px;">
+          Página Completa do Projeto &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-modal" class="contact-modal-overlay" role="dialog" aria-modal="true">
+    <div class="contact-modal-box">
+      <button class="modal-close-btn">&times;</button>
+      <h3 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; margin-bottom: 0.5rem;">Vamos conversar!</h3>
+      <form>
+        <div class="form-group"><label class="form-label">Seu Nome</label><input type="text" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Seu E-mail</label><input type="email" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Assunto</label><input type="text" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Mensagem</label><textarea class="form-textarea" rows="4" required></textarea></div>
+        <button type="submit" class="form-submit-btn">Enviar Mensagem</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
