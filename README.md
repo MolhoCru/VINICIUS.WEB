@@ -1,4 +1,4 @@
-# Portfólio Pessoal — Vinícius Amaral
+# Portfólio Pessoal
 
 Site de portfólio criado para apresentar quem eu sou, o que estou estudando e os projetos que
 desenvolvi durante o curso de Engenharia da Computação.
