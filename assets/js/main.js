@@ -16,9 +16,9 @@ const PROJECTS_DATA = {
       focus: "Modelagem e Lógica"
     },
     gallery: [
-      { caption: "Visão Geral do Cenário 3D" },
-      { caption: "Detalhes da Modelagem" },
-      { caption: "Teste de Iluminação na Unity" }
+      { type: "video", src: "assets/images/unity-demo.mp4", caption: "Demonstração Interativa do Cenário em Tempo Real" },
+      { type: "image", src: "assets/images/unity-forest.jpeg", caption: "Visão Geral do Cenário 3D e Iluminação" },
+      { type: "image", src: "assets/images/unity-editor.jpeg", caption: "Interface do Unity 6 com a Scene View" }
     ],
     next: "dev-software",
     prev: "logica-programacao"
@@ -36,9 +36,7 @@ const PROJECTS_DATA = {
       focus: "Arquitetura e Clean Code"
     },
     gallery: [
-      { caption: "Interface da Aplicação" },
-      { caption: "Estrutura do Código" },
-      { caption: "Diagrama de Arquitetura" }
+      { type: "image", src: "assets/images/ide-code.jpg", caption: "Editor de Código IDE & Implementação de Algoritmos" }
     ],
     next: "sistemas-embarcados",
     prev: "modelagem-3d"
@@ -55,11 +53,7 @@ const PROJECTS_DATA = {
       tools: "C++, Microcontroladores",
       focus: "Automação e Controle"
     },
-    gallery: [
-      { caption: "Protótipo na Protoboard" },
-      { caption: "Leitura de Sensores Seriais" },
-      { caption: "Projeto Final de Automação" }
-    ],
+    gallery: [],
     next: "logica-programacao",
     prev: "dev-software"
   },
@@ -76,9 +70,7 @@ const PROJECTS_DATA = {
       focus: "Otimização e Algoritmos"
     },
     gallery: [
-      { caption: "Desafios Resolvidos" },
-      { caption: "Gráfico de Desempenho (Big-O)" },
-      { caption: "Estudo de Árvores Binárias" }
+      { type: "image", src: "assets/images/ide-code.jpg", caption: "Editor de Código IDE & Resolução de Algoritmos" }
     ],
     next: "modelagem-3d",
     prev: "sistemas-embarcados"
@@ -206,12 +198,23 @@ function openProjectModal(data) {
   }
 
   if (gallery) {
-    gallery.innerHTML = data.gallery.map(item => `
-      <div style="margin-bottom: 2rem;">
-        <div class="img-placeholder" style="min-height: 400px; margin-bottom: 0.5rem;">[ Espaço para Imagem: ${item.caption} ]</div>
-        <p style="font-size:0.8rem; color:var(--text-subtle); margin-top:0.5rem; text-transform:uppercase; letter-spacing:0.05em;">${item.caption}</p>
-      </div>
-    `).join('');
+    if (data.gallery && data.gallery.length > 0) {
+      gallery.innerHTML = data.gallery.map(item => `
+        <div style="margin-bottom: 2rem;">
+          ${item.type === 'video'
+            ? `<video src="${item.src}" controls playsinline style="width: 100%; border-radius: 4px; max-height: 480px; background: #000; display: block;"></video>`
+            : `<img src="${item.src}" alt="${item.caption}" style="width: 100%; border-radius: 4px; display: block; object-fit: cover; max-height: 520px;">`
+          }
+          <p style="font-size:0.8rem; color:var(--text-subtle); margin-top:0.75rem; text-transform:uppercase; letter-spacing:0.05em;">${item.caption}</p>
+        </div>
+      `).join('');
+    } else {
+      gallery.innerHTML = `
+        <div style="padding: 2.5rem 1rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; border: 1px dashed var(--border-color); border-radius: 4px;">
+          Imagens e documentação visual em fase de preparação no laboratório.
+        </div>
+      `;
+    }
   }
 
   modal.classList.add('active');
@@ -324,21 +327,29 @@ function initDynamicProjectPage() {
   }
 
   if (galleryEl) {
-    galleryEl.innerHTML = project.gallery.map((item, idx) => {
-      const isLarge = idx === 0 || idx === 3;
-      return `
-        <div class="gallery-row ${isLarge ? 'single-full' : 'split-half'}">
-          <div>
-             <div class="img-placeholder" style="min-height: 500px;">[ Espaço para Imagem: ${item.caption} ]</div>
-          </div>
-          ${!isLarge && project.gallery[idx + 1] ? `
-            <div>
-              <div class="img-placeholder" style="min-height: 500px;">[ Espaço para Imagem: ${project.gallery[idx+1].caption} ]</div>
+    if (project.gallery && project.gallery.length > 0) {
+      galleryEl.innerHTML = project.gallery.map((item) => {
+        return `
+          <div class="gallery-row single-full" style="margin-bottom: 2rem;">
+            <div class="gallery-img-box" style="border-radius: 4px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-color);">
+              ${item.type === 'video'
+                ? `<video src="${item.src}" controls playsinline style="width: 100%; display: block; max-height: 600px; background: #000;"></video>`
+                : `<img src="${item.src}" alt="${item.caption}" style="width: 100%; display: block; max-height: 650px; object-fit: cover;">`
+              }
             </div>
-          ` : ''}
+            <p style="font-size: 0.85rem; color: var(--text-subtle); margin-top: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">
+              ${item.caption}
+            </p>
+          </div>
+        `;
+      }).join('');
+    } else {
+      galleryEl.innerHTML = `
+        <div style="padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-size: 1rem; border: 1px dashed var(--border-color); border-radius: 4px; margin-bottom: 3rem;">
+          Documentação visual e esquemáticos deste projeto em processo de catalogação.
         </div>
       `;
-    }).join('');
+    }
   }
 
   if (nextEl && project.next && PROJECTS_DATA[project.next]) {
